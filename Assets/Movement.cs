@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
     public float walkSpeed = 4f;
     public float maxVelocityChange = 10f;
 
@@ -30,7 +31,8 @@ public class Movement : MonoBehaviour
 
         targetVelocity *= _speed;
 
-        Vector3 velocity = rb.velocity;
+        Vector3 velocity = rb.linearVelocity;
+
 
         if (input.magnitude > 0.5f)
         {
