@@ -15,21 +15,18 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        base.OnConnectedToMaster();
         Debug.Log("Connected to Server");
         PhotonNetwork.JoinLobby();
     }
 
     public override void OnJoinedLobby()
     {
-        base.OnJoinedLobby();
         PhotonNetwork.JoinOrCreateRoom("TestRoom", null, null);             
     }
 
     
     public override void OnJoinedRoom()
     {
-        base.OnJoinedRoom();
         Debug.Log("Bir odaya baþarýyla katýldýk! Oyuncu oluþturuluyor.");        
         GameObject _player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);
         _player.GetComponent<PlayerSetup>().IsLocalPlayer();    
